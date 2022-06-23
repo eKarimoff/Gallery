@@ -561,3 +561,19 @@ p{
   color: white;
   font-family: "Fira Sans", sans-serif;
 }
+.btn_edit {
+  display: inline-block;
+  background-color: rgb(18, 149, 39);
+  padding: 5px 40px;
+  border-radius: 30px;
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+}
+.btn_delete {
+  display: inline-block;
+  background-color: red;
+  padding: 5px 40px;
+  border-radius: 30px;
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+}
