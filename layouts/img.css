@@ -200,7 +200,7 @@ a {
   width: 96%;
   padding: 10px 2% 10px 2%;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 .midLeft,
 .midRight {
@@ -281,7 +281,7 @@ display: flex;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 .topHead {
   width: 30%;

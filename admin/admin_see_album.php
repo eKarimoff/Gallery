@@ -53,9 +53,6 @@ include '../layouts/connect.php'
 			</div>
             
 			<div class="midMid">
-
-				
-                
 				<div class="midMid3">
                 <?php 
     		$sql= "SELECT * FROM albums";
@@ -70,7 +67,7 @@ include '../layouts/connect.php'
 					<div class="progress1 progress">
 					
     <div class="img_card">
-        <a href="../user/picture.php? img_id='<?php echo $id;?>'"><img src="<?php echo $imageUrl ?>" alt="Cinque Terre" width="80" height="80"></a>
+        <a href="admin_see_picture.php? img_id='<?php echo $id;?>'"><img src="<?php echo $imageUrl ?>" alt="Cinque Terre" width="80" height="80"></a>
     </div>
     <div>
         <p ><?php echo $name?></p>

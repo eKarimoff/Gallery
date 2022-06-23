@@ -1,12 +1,52 @@
-<?php 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<?php
 include '../layouts/connect.php';
+include '../layouts/app.php';
 
-$id=$_GET['edit_picture'];
-$sql="SELECT * FROM pictures WHERE id=$id";
-$result=mysqli_query($con,$sql);
-$row=mysqli_fetch_assoc($result);
-$id= $row['id'];
-$image= $row['image'];
-$desc= $row['desc'];
-$album_id= $row['album_id'];
+if(isset($_GET['edit_pic'])){
+    $id = $_GET['edit_pic'];
+    $sql = "SELECT * FROM pictures WHERE id=$id";
+    $query = mysqli_query($con,$sql);
+    
+    while($row = mysqli_fetch_array($query)){
+    $id = $row['id'];
+    $desc = $row['description'];
+    $image = '../upload_picture/'. $row['image']; 
+?>
+<div>
+
+<form action="" method="POST">
+    <input type="hidden" name="edit_id"  value="<?php echo $id ?>">
+   
+    <div class="form-group">
+         <label>Description</label>
+         <input type="text"name="edit_description" value="<?php echo $desc ?>" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Upload Image</label>
+        <img src="<?php echo $image?>" width="300px" height="150px">
+        <input type="file"name="edit_picture" value="<?php echo $image ?>" class="form-control">
+    </div>
+ 
+    <select name="album_id" class="form-control mt-2">
+            <option value="" class="form-control">Select a album</option>
+            <?php
+            
+           $sql= "SELECT * FROM albums WHERE id";
+           $result = mysqli_query($con,$sql);
+           while($row = mysqli_fetch_array($result)){
+              ?>
+            <option value="<?php echo  $row['id']?>"><?php echo $row['name']?></option>
+            <?php }  ?>
+        </select>
+        <a href="admin_see_picture.php" class="btn btn-danger">Cancel</a>
+        <button type="submit" name="update_btn" class="btn btn-primary">Update</button>
+    </form>
+    </div>
+  
+
+    <?php 
+    }
+}
 ?>
