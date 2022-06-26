@@ -28,19 +28,25 @@ include '../layouts/connect.php'
 							<img
 								src="https://cdn-icons-png.flaticon.com/128/1508/1508964.png"
 								alt=""
-							/><span>Add Album</span>
+							/> <a href="../admin/admin.php"><span>Add Album</span></a>
 						</li>
 						<li>
 							<img
 								src="https://cdn-icons-png.flaticon.com/128/833/833593.png"
 								alt=""
-							/><span>Add Picture</span>
+							/><a href="../admin/admin.php"><span>Add Picture</span></a>
 						</li>
 						<li>
 							<img
-								src="https://cdn-icons-png.flaticon.com/128/2099/2099058.png"
+								src="https://cdn-icons-png.flaticon.com/128/1286/1286853.png"
 								alt=""
-							/><span>Album</span>
+							/><a href="../admin/admin_see_album.php"><span>Admin See Album</span></a>
+						</li>
+						<li>
+							<img
+								src="https://cdn-icons-png.flaticon.com/128/1286/1286853.png"
+								alt=""
+							/><a href="../user/album.php"><span>User See Album</span></a>
 						</li>
 						<li>
 							<img
@@ -48,6 +54,7 @@ include '../layouts/connect.php'
 								alt=""
 							/><span>LOG OUT</span>
 						</li>
+						
 					</ul>
 				</div>
 			</div>
