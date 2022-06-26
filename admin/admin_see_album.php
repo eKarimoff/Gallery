@@ -34,7 +34,7 @@ include '../layouts/connect.php'
 							<img
 								src="https://cdn-icons-png.flaticon.com/128/833/833593.png"
 								alt=""
-							/><a href="../admin/admin.php"><span>Add Picture</span></a>
+							/><a href="../admin/add_picture.php"><span>Add Picture</span></a>
 						</li>
 						<li>
 							<img

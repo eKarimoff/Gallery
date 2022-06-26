@@ -588,3 +588,11 @@ p{
 .input_pls{
   display: inline-block;
 }
+.button_danger{
+  display: inline-block;
+  background-color: red;
+  padding: 5px 210px;
+  border-radius: 30px;
+  color:white;
+  margin-top: 10px;
+}

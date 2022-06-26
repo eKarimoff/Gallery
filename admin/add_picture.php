@@ -50,15 +50,7 @@ if(isset($_POST["submit"])){
     <div class="flex" style="justify-content:space-between;">
 
    
-    <!-- <form action="add_album.php" method="post" enctype="multipart/form-data">
-            <p class="form-control mt-2">Create New Album:</p>
-            <input type="text" name="name" placeholder="Please enter name of Album" class="form-control">
-            <input type="file" name="file" multiple="multiple" class="custom-file-input mt-2" style="width:80%">
-           
-            <input type="submit" class="button" value="Send" name="submit">
-        </form> -->
-    
-        <!-- Add Picture Form -->
+   
       
     <form action="" method="post" enctype="multipart/form-data">
         <p class="form-control mt-2">Select image to upload:</p>
@@ -75,7 +67,8 @@ if(isset($_POST["submit"])){
         <input type="file" name="file[]" multiple class="custom-file-input mt-2 mb-2" style="width:80%">
         <input type="submit" class="button" value="Send" name="submit">
     </form>
-    </div>
+</div>
+<a href="admin_see_album.php"><div class="button_danger"> Back</div> </a>
     </div>
        
    

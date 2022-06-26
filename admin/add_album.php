@@ -45,6 +45,7 @@ if(isset($_POST["submit"])){
 
 
 ?>
+
      <div class="container mt-5" style="width:500px">
 
      <form action="" method="post" enctype="multipart/form-data">
@@ -55,3 +56,5 @@ if(isset($_POST["submit"])){
             <input type="submit" class="button" value="Submit" name="submit">
         </form>
         </div>
+        <a href="admin_see_album.php"><div class="button_danger"> Back</div> </a>
+    </div>
