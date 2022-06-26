@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
 <?php
 include '../layouts/connect.php';
 include '../layouts/app.php';
@@ -22,26 +24,34 @@ if(isset($_POST["submit"])){
            
            if($insert){
             $statusMsg = "The file".$album." has been uploaded successfully.";
-            header("Location:admin.php");
+            header("Location:add_album.php");
            }else{
             $statusMsg = "File upload failed,please try again.";
            }
         }
            else{
            $statusMsg ="Sorry,there was an error uploading your file.";
-         header("Location:admin.php");
+         header("Location:add_album.php");
        }
     }else{
         $statusMsg = "Sorry,only JPG,JPEG,PNG,GIF,&PDF files are allowed to upload.";
-         header("Location:admin.php");
+         header("Location:add_album.php");
     }
 }else{
         $statusMsg = "Please select a file to upload";
-         header("Location:admin.php");
+         header("Location:add_album.php");
     }
 }
 
+
 ?>
-     
-       
-    
+     <div class="container mt-5" style="width:500px">
+
+     <form action="" method="post" enctype="multipart/form-data">
+            <p class="form-control mt-2">Create New Album:</p>
+            <input type="text" name="name" placeholder="Please enter name of Album" class="form-control">
+            <input type="file" name="file" multiple="multiple" class="custom-file-input mt-2" style="width:80%">
+           
+            <input type="submit" class="button" value="Submit" name="submit">
+        </form>
+        </div>

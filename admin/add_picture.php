@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
 <?php
 include '../layouts/connect.php';
 include '../layouts/app.php';
@@ -24,18 +26,18 @@ if(isset($_POST["submit"])){
            
            if($insert){
             $statusMsg = "The file".$fileName." has been uploaded successfully.";
-            header("Location:admin.php");
+            header("Location:add_picture.php");
            }else{
             $statusMsg = "File upload failed,please try again.";
            }
         }
            else{
            $statusMsg ="Sorry,there was an error uploading your file.";
-           header("Location:admin.php");
+           header("Location:add_picture.php");
        }
     }else{
         $statusMsg = "Sorry,only JPG,JPEG,PNG,GIF,&PDF files are allowed to upload.";
-        header("Location:admin.php");
+        header("Location:add_picture.php");
     }
 }
     }
@@ -43,7 +45,37 @@ if(isset($_POST["submit"])){
 
 
     ?>
-    
+    <div class="container mt-5" style="width:500px">
+
+    <div class="flex" style="justify-content:space-between;">
+
    
+    <!-- <form action="add_album.php" method="post" enctype="multipart/form-data">
+            <p class="form-control mt-2">Create New Album:</p>
+            <input type="text" name="name" placeholder="Please enter name of Album" class="form-control">
+            <input type="file" name="file" multiple="multiple" class="custom-file-input mt-2" style="width:80%">
+           
+            <input type="submit" class="button" value="Send" name="submit">
+        </form> -->
+    
+        <!-- Add Picture Form -->
+      
+    <form action="" method="post" enctype="multipart/form-data">
+        <p class="form-control mt-2">Select image to upload:</p>
+        <select name="album_id" class="form-control mt-2">
+            <option value="" class="form-control">Select a album</option>
+            <?php
+           $sql= "SELECT * FROM albums";
+           $result=mysqli_query($con,$sql);
+           while($row=mysqli_fetch_assoc($result)){
+               ?>
+            <option value="<?php echo  $row['id']?>"><?php echo $row['name']?></option>
+            <?php }   ?>
+        </select>
+        <input type="file" name="file[]" multiple class="custom-file-input mt-2 mb-2" style="width:80%">
+        <input type="submit" class="button" value="Send" name="submit">
+    </form>
+    </div>
+    </div>
        
    

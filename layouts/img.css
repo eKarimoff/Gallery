@@ -577,3 +577,14 @@ p{
   color: white;
   font-family: "Fira Sans", sans-serif;
 }
+.button {
+  display: inline-block;
+  background-color: green;
+  padding: 5px 210px;
+  border-radius: 30px;
+  color:white;
+  margin-top: 10px;
+}
+.input_pls{
+  display: inline-block;
+}

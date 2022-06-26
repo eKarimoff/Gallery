@@ -6,7 +6,7 @@ include '../layouts/connect.php'
 <div>
 <section id="nav">
 			<div class="navLeft">
-				<h1>Admin Panel</h1>
+				<h1>User See Album </h1>
 			</div>
 			
 	</section>
@@ -23,30 +23,6 @@ include '../layouts/connect.php'
 								src="https://cdn-icons-png.flaticon.com/128/1828/1828765.png"
 								alt=""
 							/><span>DASHBOARD</span>
-						</li>
-						<li>
-							<img
-								src="https://cdn-icons-png.flaticon.com/128/1508/1508964.png"
-								alt=""
-							/><span>Add Album</span>
-						</li>
-						<li>
-							<img
-								src="https://cdn-icons-png.flaticon.com/128/833/833593.png"
-								alt=""
-							/><span>Add Picture</span>
-						</li>
-						<li>
-							<img
-								src="https://cdn-icons-png.flaticon.com/128/2099/2099058.png"
-								alt=""
-							/><span>Album</span>
-						</li>
-						<li>
-							<img
-								src="https://cdn-icons-png.flaticon.com/128/1286/1286853.png"
-								alt=""
-							/><span>LOG OUT</span>
 						</li>
 					</ul>
 				</div>

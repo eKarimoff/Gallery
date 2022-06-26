@@ -28,7 +28,7 @@ include '../layouts/connect.php'
 							<img
 								src="https://cdn-icons-png.flaticon.com/128/1508/1508964.png"
 								alt=""
-							/> <a href="../admin/admin.php"><span>Add Album</span></a>
+							/> <a href="../admin/add_album.php"><span>Add Album</span></a>
 						</li>
 						<li>
 							<img
@@ -40,20 +40,9 @@ include '../layouts/connect.php'
 							<img
 								src="https://cdn-icons-png.flaticon.com/128/1286/1286853.png"
 								alt=""
-							/><a href="../admin/admin_see_album.php"><span>Admin See Album</span></a>
-						</li>
-						<li>
-							<img
-								src="https://cdn-icons-png.flaticon.com/128/1286/1286853.png"
-								alt=""
 							/><a href="../user/album.php"><span>User See Album</span></a>
 						</li>
-						<li>
-							<img
-								src="https://cdn-icons-png.flaticon.com/128/1286/1286853.png"
-								alt=""
-							/><span>LOG OUT</span>
-						</li>
+						
 						
 					</ul>
 				</div>
