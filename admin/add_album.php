@@ -20,7 +20,7 @@ if(isset($_POST["submit"])){
        
        if(move_uploaded_file($_FILES["file"]["tmp_name"],$targetFilePath)){
         
-           $insert = $con->query("INSERT INTO albums(name,images,created_at,updated_at) VALUES ('$name','$album',NOW(),NOW())");
+           $insert = $con->query("INSERT INTO albums(name,image,created_at,updated_at) VALUES ('$name','$album',NOW(),NOW())");
            
            if($insert){
             $statusMsg = "The file".$album." has been uploaded successfully.";
@@ -55,6 +55,6 @@ if(isset($_POST["submit"])){
            
             <input type="submit" class="button" value="Submit" name="submit">
         </form>
+        <a href="admin_see_album.php"><div class="button_danger">Back</div></a>
         </div>
-        <a href="admin_see_album.php"><div class="button_danger"> Back</div> </a>
     </div>

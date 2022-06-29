@@ -49,6 +49,7 @@ include '../layouts/app.php';
 					$id = $row['id'];
 					$imageUrl = '../upload_picture/'.$row['image'];
 					$desc = $row['description'];
+					
 			?>  
 				  <div class="fancy_im1 fr">
 				  <a data-caption="<?php echo $desc; ?>"
@@ -56,6 +57,7 @@ include '../layouts/app.php';
 								href="<?php echo  $imageUrl ?>">
 								<img class="rounded img_small" src="<?php echo  $imageUrl ?>" />
 							</a>
+							<div style="text-align:center; margin: 5px 5px"><?php echo $desc; ?></div>
 						<div class="flex" style="justify-content:space-between; margin: 2px 5px">
 						<div>
 						<a href="edit_picture.php?edit_pic='<?php echo $id ?>'" class="btn_edit">Edit</a>

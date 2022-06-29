@@ -1,45 +1,35 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <?php
 include '../layouts/connect.php';
-?>
+include '../layouts/app.php';
 
-    
-
-<?php 
-
-    $id=$_GET['edit_id'];
-    $sql="SELECT * FROM pictures WHERE id=$id";
+    if(isset($_GET['edit_album'])){
+    $id=$_GET['edit_album'];
+    $sql="SELECT * FROM albums WHERE id=$id";
     $result=mysqli_query($con,$sql);
     while($row=mysqli_fetch_assoc($result)){
-    $id= $row['id'];
-    $image= $row['image'];
-    $desc= $row['description'];
-    $album_id= $row['album_id'];
+    $id = $row['id'];
+    $name = $row['name'];
+    $image = '../upload_album/'. $row['image'];
 ?>
+<div class="container mt-5" style="width:700px">
 
-<form action="" method="POST">
-    <input type="hidden" name="edit_id"  value="<?php echo $id ?>">
-   
+<form action="update_album.php" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="id"  value="<?php echo $id ?>">
     <div class="form-group">
-         <label>Description</label>
-         <input type="text"name="edit_description" value="<?php echo $desc ?>"class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Upload Image</label>
-        <input type="file"name="edit_picture" value="<?php echo $image ?>" class="form-control">
+        <label>Old Image</label>
+        <img src="<?php echo $image?>" width="400px" height="250px" style="border-radius:25px" class="form-control" required>
+        <input type="file" name="edit_album" value="<?php echo $image ?>" class="form-control mt-4" required>
+        <label>Album Name</label>
+        <input type="text" value="<?php echo $name ?>" name="name" class="form-control" required>
     </div>
     <?php }?>
-    <select name="album_id" class="form-control mt-2">
-            <option value="" class="form-control">Select a album</option>
-            <?php
-           $sql= "SELECT * FROM albums";
-           $result=mysqli_query($con,$sql);
-           while($row=mysqli_fetch_assoc($result)){
-               ?>
-            <option value="<?php echo  $row['id']?>"><?php echo $row['name']?></option>
-            <?php }  ?>
-        </select>
+    <div style="text-align: center" class="mt-3">
+        <a href="admin_see_album.php" class="btn btn-danger">Cancel</a>
+        <button type="submit" name="update_album" class="btn btn-primary">Update</button>
+    </div>
     </form>
-  
-    <a href="admin_see_picture.php" class="btn btn-danger"> CANCEL </a>
-    <button type="submit" name="update_btn" class="btn btn-primary">Update</button>
-                                                                                               
+    </div>
+    
+    <?php } ?>

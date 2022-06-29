@@ -1,4 +1,6 @@
+
 <?php
+session_start();
 include '../layouts/app.php';
 include '../layouts/connect.php'
 ?>
@@ -10,6 +12,7 @@ include '../layouts/connect.php'
 			</div>
 			
 	</section>
+	
 		<section id="mid">
 			<div class="symbol" onclick="show()">
 				<span class="cross c1"></span>
@@ -47,18 +50,27 @@ include '../layouts/connect.php'
 					</ul>
 				</div>
 			</div>
-            
+					<?php
+			
+			if($_SESSION['flash']) {
+				$message = $_SESSION['flash'];
+				unset($_SESSION['flash']);
+				echo $message;
+			}
+			?>
 			<div class="midMid">
 				<div class="midMid3">
                 <?php 
+			
     		$sql= "SELECT * FROM albums";
 			$result=$con->query($sql);
 
 			if($result){
 			while($row = mysqli_fetch_array($result)){
-			$imageUrl = '../upload_album/'.$row['images'];
+			$imageUrl = '../upload_album/'.$row['image'];
 			$id = $row['id'];
 			$name = $row['name'];
+			
 	?>
 					<div class="progress1 progress">
 					
@@ -70,7 +82,7 @@ include '../layouts/connect.php'
     </div>
 	<div class="midMid1">
 					<div class="flex" style="justify-content:space-between; margin: 2px 5px">
-						   <a href="edit_picture.php? edit_picture='<?php echo $id ?>'" class="btn_edit">Edit</a>
+						   <a href="edit_album.php?edit_album='<?php echo $id ?>'" class="btn_edit">Edit</a>
 						
 							<a href="delete_album.php?delete_album='<?php echo $id ?>'" class="btn_delete">Delete</a>
 							</div>

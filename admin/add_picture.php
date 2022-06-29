@@ -49,9 +49,6 @@ if(isset($_POST["submit"])){
 
     <div class="flex" style="justify-content:space-between;">
 
-   
-   
-      
     <form action="" method="post" enctype="multipart/form-data">
         <p class="form-control mt-2">Select image to upload:</p>
         <select name="album_id" class="form-control mt-2">
@@ -68,7 +65,7 @@ if(isset($_POST["submit"])){
         <input type="submit" class="button" value="Send" name="submit">
     </form>
 </div>
-<a href="admin_see_album.php"><div class="button_danger"> Back</div> </a>
+<a href="admin_see_album.php"><div class="button_danger">Back</div> </a>
     </div>
        
    

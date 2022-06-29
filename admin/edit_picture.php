@@ -12,36 +12,37 @@ if(isset($_GET['edit_pic'])){
     while($row = mysqli_fetch_array($query)){
     $id = $row['id'];
     $desc = $row['description'];
+    $album_id  = $row['album_id'];
     $image = '../upload_picture/'. $row['image']; 
 ?>
-<div>
+<div class="container mt-5" style="width:700px">
 
-<form action="" method="POST">
-    <input type="hidden" name="edit_id"  value="<?php echo $id ?>">
+<form action="update_picture.php" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="id"  value="<?php echo $id ?>">
    
     <div class="form-group">
+        <label>Old Image</label>
+        <img src="<?php echo $image ?>" width="400px" height="200px" style="border-radius:20px; border:3px solid white" required>
+        <input type="file" name="picture" value="<?php echo $image ?>" class="form-control mt-4" required>
          <label>Description</label>
-         <input type="text"name="edit_description" value="<?php echo $desc ?>" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Upload Image</label>
-        <img src="<?php echo $image?>" width="300px" height="150px">
-        <input type="file"name="edit_picture" value="<?php echo $image ?>" class="form-control">
+         <input type="text"name="description" value="<?php echo $desc ?>" class="form-control" required>
     </div>
  
-    <select name="album_id" class="form-control mt-2">
-            <option value="" class="form-control">Select a album</option>
+    <select name="album_id" class="form-control mt-2" required>
+            <option value="" class="form-control">Select Album</option>
             <?php
             
            $sql= "SELECT * FROM albums WHERE id";
            $result = mysqli_query($con,$sql);
            while($row = mysqli_fetch_array($result)){
               ?>
-            <option value="<?php echo  $row['id']?>"><?php echo $row['name']?></option>
+            <option value="<?php echo  $row['id'] ?>"><?php echo $row['name']?></option>
             <?php }  ?>
         </select>
-        <a href="admin_see_picture.php" class="btn btn-danger">Cancel</a>
-        <button type="submit" name="update_btn" class="btn btn-primary">Update</button>
+        <div style="text-align:center;" class="mt-3">
+        <a href="admin_see_album.php" class="btn btn-danger">Cancel</a>
+        <button type="submit" name="update_picture" class="btn btn-primary">Update</button>
+        </div>
     </form>
     </div>
   

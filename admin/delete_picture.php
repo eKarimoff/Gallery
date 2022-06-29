@@ -5,10 +5,10 @@ if(isset($_GET['delete_pic'])){
 
     $delete="DELETE FROM pictures WHERE id=$id";
     $result=mysqli_query($con,$delete);
-//     if($result){
+    if($result){
         
-//        header('location:admin_see_picture.php');
-//    }
+       header('location:admin_see_album.php');
+   }
    
 }
 ?>
